@@ -1,5 +1,6 @@
 //
 // MinIO Object Storage (c) 2015-2022 MinIO, Inc.
+// Modifications and additions (C) 2025-2026 soulteary, https://github.com/soulteary/madmin-go
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
