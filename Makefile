@@ -6,7 +6,7 @@ all: check
 getdeps:
 	@mkdir -p ${GOPATH}/bin
 	@which golangci-lint 1>/dev/null || (echo "Installing golangci-lint" && go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@latest)
-	@which msgp 1>/dev/null || (echo "Installing msgp" && go install github.com/tinylib/msgp@latest)
+	@which msgp 1>/dev/null || (echo "Installing msgp" && go install github.com/tinylib/msgp@v1.6.4)
 	@which stringer 1>/dev/null || (echo "Installing stringer" && go install golang.org/x/tools/cmd/stringer@latest)
 
 verifiers: getdeps vet lint check-gen
