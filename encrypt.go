@@ -22,7 +22,6 @@ import (
 	"crypto/sha256"
 	"errors"
 	"io"
-	"io/ioutil"
 
 	"github.com/secure-io/sio-go"
 	"github.com/secure-io/sio-go/sioutil"
@@ -148,7 +147,7 @@ func DecryptData(password string, data io.Reader) ([]byte, error) {
 		return nil, err
 	}
 
-	plaintext, err := ioutil.ReadAll(stream.DecryptReader(data, nonce[:], nil))
+	plaintext, err := io.ReadAll(stream.DecryptReader(data, nonce[:], nil))
 	if err != nil {
 		return nil, err
 	}

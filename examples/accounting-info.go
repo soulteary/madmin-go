@@ -37,7 +37,7 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	opts := madmin.AccountOpts{ PrefixUsage: false }
+	opts := madmin.AccountOpts{PrefixUsage: false}
 
 	accountInfo, err := madmClnt.AccountInfo(context.Background(), opts)
 	if err != nil {

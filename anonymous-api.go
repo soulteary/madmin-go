@@ -25,7 +25,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/http/cookiejar"
 	"net/http/httptrace"
@@ -191,7 +190,7 @@ func (an AnonymousClient) newRequest(ctx context.Context, method string, reqData
 	}
 	sum := sha256.Sum256(reqData.content)
 	req.Header.Set("X-Amz-Content-Sha256", hex.EncodeToString(sum[:]))
-	req.Body = ioutil.NopCloser(bytes.NewReader(reqData.content))
+	req.Body = io.NopCloser(bytes.NewReader(reqData.content))
 
 	return req, nil
 }

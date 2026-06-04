@@ -20,7 +20,7 @@ package madmin
 import (
 	"context"
 	"encoding/json"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strconv"
@@ -85,7 +85,7 @@ func (adm *AdminClient) SiteReplicationAdd(ctx context.Context, sites []PeerSite
 		return ReplicateAddStatus{}, httpRespToErrorResponse(resp)
 	}
 
-	b, err := ioutil.ReadAll(resp.Body)
+	b, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return ReplicateAddStatus{}, err
 	}
@@ -126,7 +126,7 @@ func (adm *AdminClient) SiteReplicationInfo(ctx context.Context) (info SiteRepli
 		return info, httpRespToErrorResponse(resp)
 	}
 
-	b, err := ioutil.ReadAll(resp.Body)
+	b, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return info, err
 	}
@@ -528,7 +528,7 @@ func (adm *AdminClient) SRPeerGetIDPSettings(ctx context.Context) (info IDPSetti
 		return info, httpRespToErrorResponse(resp)
 	}
 
-	b, err := ioutil.ReadAll(resp.Body)
+	b, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return info, err
 	}

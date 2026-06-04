@@ -23,7 +23,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/url"
 	"time"
@@ -74,7 +73,7 @@ func (adm *AdminClient) StartProfiling(ctx context.Context, profiler ProfilerTyp
 		return nil, httpRespToErrorResponse(resp)
 	}
 
-	jsonResult, err := ioutil.ReadAll(resp.Body)
+	jsonResult, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err
 	}

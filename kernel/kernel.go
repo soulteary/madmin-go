@@ -22,7 +22,7 @@ package kernel
 
 import (
 	"fmt"
-	"io/ioutil"
+	"os"
 	"regexp"
 	"strconv"
 	"strings"
@@ -76,7 +76,7 @@ func currentReleaseUname() (string, error) {
 }
 
 func currentReleaseUbuntu() (string, error) {
-	procVersion, err := ioutil.ReadFile("/proc/version_signature")
+	procVersion, err := os.ReadFile("/proc/version_signature")
 	if err != nil {
 		return "", err
 	}
@@ -99,7 +99,7 @@ func parseDebianRelease(str string) (string, error) {
 }
 
 func currentReleaseDebian() (string, error) {
-	procVersion, err := ioutil.ReadFile("/proc/version")
+	procVersion, err := os.ReadFile("/proc/version")
 	if err != nil {
 		return "", fmt.Errorf("error reading /proc/version: %s", err)
 	}

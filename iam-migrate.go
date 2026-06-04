@@ -20,7 +20,6 @@ package madmin
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 )
 
@@ -46,7 +45,7 @@ func (adm *AdminClient) ExportIAM(ctx context.Context) (io.ReadCloser, error) {
 
 // ImportIAM makes an admin call to setup IAM  from imported content
 func (adm *AdminClient) ImportIAM(ctx context.Context, contentReader io.ReadCloser) error {
-	content, err := ioutil.ReadAll(contentReader)
+	content, err := io.ReadAll(contentReader)
 	if err != nil {
 		return err
 	}

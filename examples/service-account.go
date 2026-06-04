@@ -1,5 +1,6 @@
 //go:build ignore
 // +build ignore
+
 //
 // MinIO Object Storage (c) 2022 MinIO, Inc.
 // Modifications and additions (C) 2025-2026 soulteary, https://github.com/soulteary/madmin-go
@@ -38,7 +39,7 @@ func main() {
 		log.Fatalln(err)
 	}
 	ctx := context.Background()
-	
+
 	// add service account
 	addReq := madmin.AddServiceAccountReq{
 		TargetUser: "my-username",

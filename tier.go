@@ -20,7 +20,7 @@ package madmin
 import (
 	"context"
 	"encoding/json"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"path"
 	"time"
@@ -77,7 +77,7 @@ func (adm *AdminClient) ListTiers(ctx context.Context) ([]*TierConfig, error) {
 	}
 
 	var tiers []*TierConfig
-	b, err := ioutil.ReadAll(resp.Body)
+	b, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return tiers, err
 	}
@@ -209,7 +209,7 @@ func (adm *AdminClient) TierStats(ctx context.Context) ([]TierInfo, error) {
 	}
 
 	var tierInfos []TierInfo
-	b, err := ioutil.ReadAll(resp.Body)
+	b, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return tierInfos, err
 	}
