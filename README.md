@@ -1,9 +1,39 @@
-# Golang Admin Client API Reference [![Slack](https://slack.min.io/slack?type=svg)](https://slack.min.io)
+# Golang Admin Client API Reference (community fork) [![Slack](https://slack.min.io/slack?type=svg)](https://slack.min.io)
+
+> [中文文档](./README_zh_CN.md)
+
 The MinIO Admin Golang Client SDK provides APIs to manage MinIO services.
 
 This quickstart guide will show you how to install the MinIO Admin client SDK, connect to MinIO admin service, and provide a walkthrough of a simple file uploader.
 
 This document assumes that you have a working [Golang setup](https://golang.org/doc/install).
+
+> **⚠️ This is an independent, community-maintained fork of the upstream `minio/madmin-go` project.**
+>
+> This project is **NOT** affiliated with, endorsed by, or sponsored by MinIO, Inc.
+> "MinIO" is a trademark of MinIO, Inc., used here solely to identify the upstream
+> project from which this fork is derived. No trademark rights are granted by the
+> Apache License 2.0 (see Section 6 of the license).
+>
+> This fork is based on the **last Apache License 2.0 release of `madmin-go`**, prior to
+> MinIO's relicensing to the GNU AGPLv3, and remains distributed under the
+> [Apache License, Version 2.0](./LICENSE). The original copyright notices of
+> MinIO, Inc. and all third-party subcomponents are retained — see [`NOTICE`](./NOTICE).
+>
+> Fork home: https://github.com/soulteary/madmin-go
+
+## About this fork
+
+This repository is a customized fork of `madmin-go` and differs from upstream in the following ways:
+
+- **Toolchain**: requires Go `1.26` or newer (see `go.mod`).
+- **Dependencies**: all module dependencies have been upgraded to their latest available versions.
+- **Tooling**: modernized CI workflows, a golangci-lint v2 configuration, and a `Makefile` for common developer tasks (`make check`, `make lint`, `make test`).
+
+> NOTE: Throughout this guide, upstream links (`min.io`, `slack.min.io`, etc.) and the
+> `minio/madmin-go` import path refer to the **original upstream project**. To consume
+> this fork, replace the dependency with `github.com/soulteary/madmin-go` in your
+> `go.mod` (via a `replace` directive or a direct require).
 
 ## Initialize MinIO Admin Client object.
 
