@@ -38,7 +38,7 @@ type MetricType uint32
 const MetricsNone MetricType = 0
 
 const (
-	MetricsScanner MetricType = 1 << (iota)
+	MetricsScanner MetricType = 1 << iota
 	MetricsDisk
 	MetricsOS
 	MetricsBatchJobs
@@ -46,7 +46,7 @@ const (
 
 	// MetricsAll must be last.
 	// Enables all metrics.
-	MetricsAll = 1<<(iota) - 1
+	MetricsAll = 1<<iota - 1
 )
 
 // MetricsOptions are options provided to Metrics call.
