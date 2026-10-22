@@ -33,7 +33,8 @@ This repository is a customized fork of `madmin-go` and differs from upstream in
 > NOTE: Throughout this guide, upstream links (`min.io`, `slack.min.io`, etc.) and the
 > `minio/madmin-go` import path refer to the **original upstream project**. To consume
 > this fork, replace the dependency with `github.com/soulteary/madmin-go` in your
-> `go.mod` (via a `replace` directive or a direct require).
+> `go.mod` using a `replace` directive. The module retains its upstream import path;
+> requiring the fork path directly is not supported.
 
 ## Initialize MinIO Admin Client object.
 
