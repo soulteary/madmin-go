@@ -24,13 +24,13 @@ MinIO Admin Golang Client SDK 提供了用于管理 MinIO 服务的一系列 API
 
 本仓库是 `madmin-go` 的定制 fork，与上游存在以下差异：
 
-- **构建工具链**：要求 Go `1.26` 及以上版本（详见 `go.mod`）。
+- **构建工具链**：要求 Go `1.27.3` 及以上版本（详见 `go.mod`）。
 - **依赖**：所有模块依赖均已升级到当前可用的最新版本。
 - **工程化**：现代化的 CI 工作流、golangci-lint v2 配置，以及用于常见开发任务的 `Makefile`（`make check`、`make lint`、`make test`）。
 
 > 说明：本文中出现的上游链接（`min.io`、`slack.min.io` 等）以及 `minio/madmin-go`
 > 导入路径均指向**原始上游项目**。如需使用本 fork，请在你的 `go.mod` 中将依赖替换为
-> `github.com/soulteary/madmin-go`（通过 `replace` 指令或直接 require）。
+> `github.com/soulteary/madmin-go`（使用 `replace` 指令）。本模块保留上游导入路径，不能直接 require Fork 路径。
 
 ## 安装
 

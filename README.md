@@ -26,14 +26,15 @@ This document assumes that you have a working [Golang setup](https://golang.org/
 
 This repository is a customized fork of `madmin-go` and differs from upstream in the following ways:
 
-- **Toolchain**: requires Go `1.26` or newer (see `go.mod`).
+- **Toolchain**: requires Go `1.27.3` or newer (see `go.mod`).
 - **Dependencies**: all module dependencies have been upgraded to their latest available versions.
 - **Tooling**: modernized CI workflows, a golangci-lint v2 configuration, and a `Makefile` for common developer tasks (`make check`, `make lint`, `make test`).
 
 > NOTE: Throughout this guide, upstream links (`min.io`, `slack.min.io`, etc.) and the
 > `minio/madmin-go` import path refer to the **original upstream project**. To consume
 > this fork, replace the dependency with `github.com/soulteary/madmin-go` in your
-> `go.mod` (via a `replace` directive or a direct require).
+> `go.mod` using a `replace` directive. The module retains its upstream import path;
+> requiring the fork path directly is not supported.
 
 ## Initialize MinIO Admin Client object.
 
