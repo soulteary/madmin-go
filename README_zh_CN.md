@@ -30,7 +30,7 @@ MinIO Admin Golang Client SDK 提供了用于管理 MinIO 服务的一系列 API
 
 > 说明：本文中出现的上游链接（`min.io`、`slack.min.io` 等）以及 `minio/madmin-go`
 > 导入路径均指向**原始上游项目**。如需使用本 fork，请在你的 `go.mod` 中将依赖替换为
-> `github.com/soulteary/madmin-go`（通过 `replace` 指令或直接 require）。
+> `github.com/soulteary/madmin-go`（使用 `replace` 指令）。本模块保留上游导入路径，不能直接 require Fork 路径。
 
 ## 安装
 
